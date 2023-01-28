@@ -11,13 +11,31 @@
             <h1>News Portal</h1>
         </header>
         <main>
-            <div class="sources buttons"></div>
-            <div class="news"></div>
+            <input type="checkbox" name="burger-checkbox" id="burger-checkbox">
+            <label for="burger-checkbox" class="burger">
+                <div class="burger__line"></div>
+                <div class="burger__line"></div>
+                <div class="burger__line"></div>
+            </label>
+            <div class="sources-panel">
+                <div class="sources"></div>
+            </div>
+            <div class="news" onclick="document.querySelector('#burger-checkbox').checked = false"></div>
         </main>
         <footer>
-            <p class="copyright">
-                Copyright <a href="https://newsapi.org">NewsAPI</a>
-            </p>
+            <div class="footer__content">
+                <a class="footer__logo footer__logo_github" href="https://github.com/BayanAlex">
+                    <img class="footer__logo-img" src="./images/logo-github.png" />
+                </a>
+                <div class="footer__date">01.2023</div>
+                <div class="footer__name">Oleksandr Shyhyda</div>
+                <p class="copyright">
+                    Copyright <a href="https://newsapi.org">NewsAPI</a>
+                </p>
+                <a class="footer__logo footer__logo_rs" href="https://rs.school/">
+                    <img class="footer__logo-img" src="./images/logo-rsschool.png" />
+                </a>
+            </div>
         </footer>
 
         <template id="sourceItemTemp">
@@ -46,6 +64,5 @@
             </div>
         </template>
 
-        <script src="./index.js"></script>
     </body>
 </html>
