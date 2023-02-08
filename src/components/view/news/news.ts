@@ -14,7 +14,7 @@ class News {
         let element: HTMLElement | null;
 
         news.forEach((item: ApiArticle, idx: number) => {
-            const newsClone = newsItemTemp.content.cloneNode(true) as HTMLElement;
+            const newsClone: HTMLElement = newsItemTemp.content.cloneNode(true) as HTMLElement;
             if (!newsClone) return;
 
             if (idx % 2) {

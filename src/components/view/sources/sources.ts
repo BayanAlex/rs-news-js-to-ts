@@ -11,7 +11,7 @@ class Sources {
         let element: HTMLElement | null;
 
         data.forEach((item: ApiSource) => {
-            const sourceClone = sourceItemTemp.content.cloneNode(true) as HTMLElement;
+            const sourceClone: HTMLElement = sourceItemTemp.content.cloneNode(true) as HTMLElement;
             element = sourceClone.querySelector('.source__item-name');
             if (element) element.textContent = item.name;
             element = sourceClone.querySelector('.source__item');
