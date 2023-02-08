@@ -12,12 +12,12 @@ export class AppView {
     }
 
     public drawNews(data: ApiArticlesData): void {
-        const values: ApiArticle[] = data?.articles ? data?.articles : [];
+        const values: Array<ApiArticle> = data?.articles ? data?.articles : [];
         this.news.draw(values);
     }
 
     public drawSources(data: ApiSourcesData): void {
-        const values: ApiSource[] = data?.sources ? data?.sources : [];
+        const values: Array<ApiSource> = data?.sources ? data?.sources : [];
         this.sources.draw(values);
     }
 }

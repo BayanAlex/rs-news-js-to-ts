@@ -2,7 +2,7 @@ import AppLoader from './appLoader';
 import { ApiEndpoint, Callback } from '../api/api';
 
 class AppController extends AppLoader {
-    public getSources(callback: Callback) {
+    public getSources(callback: Callback): void {
         super.getResp(
             {
                 endpoint: ApiEndpoint.Sources,
@@ -16,27 +16,26 @@ class AppController extends AppLoader {
         const newsContainer: EventTarget | null = e.currentTarget;
         if (!(newsContainer instanceof Element)) return;
         while (target !== newsContainer) {
-            if (target instanceof Element) {
-                if (target.classList.contains('source__item')) {
-                    const sourceId: string | null = target.getAttribute('data-source-id');
-                    if (sourceId) {
-                        if (newsContainer.getAttribute('data-source') !== sourceId) {
-                            newsContainer.setAttribute('data-source', sourceId);
-                            super.getResp(
-                                {
-                                    endpoint: ApiEndpoint.Everything,
-                                    options: {
-                                        sources: sourceId,
-                                    },
+            if (!(target instanceof Element)) return;
+            if (target.classList.contains('source__item')) {
+                const sourceId: string | null = target.getAttribute('data-source-id');
+                if (sourceId) {
+                    if (newsContainer.getAttribute('data-source') !== sourceId) {
+                        newsContainer.setAttribute('data-source', sourceId);
+                        super.getResp(
+                            {
+                                endpoint: ApiEndpoint.Everything,
+                                options: {
+                                    sources: sourceId,
                                 },
-                                callback
-                            );
-                        }
-                        return;
+                            },
+                            callback
+                        );
                     }
+                    return;
                 }
-                target = target.parentNode;
-            } else return;
+            }
+            target = target.parentNode;
         }
     }
 }

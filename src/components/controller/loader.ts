@@ -23,7 +23,7 @@ class Loader {
     }
 
     private makeUrl(options: Partial<ApiOptions>, endpoint: ApiEndpoint): string {
-        const urlOptions = { ...this.options, ...options };
+        const urlOptions: Partial<ApiOptions> = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
         Object.keys(urlOptions).forEach((key: string): void => {

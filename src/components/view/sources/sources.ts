@@ -2,9 +2,11 @@ import './sources.css';
 import { ApiSource } from '../../api/api';
 
 class Sources {
-    public draw(data: ApiSource[]): void {
+    public draw(data: Array<ApiSource>): void {
         const fragment: DocumentFragment = document.createDocumentFragment();
-        const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement | null;
+        const sourceItemTemp: HTMLTemplateElement | null = document.querySelector(
+            '#sourceItemTemp'
+        ) as HTMLTemplateElement | null;
         if (!sourceItemTemp) return;
         let element: HTMLElement | null;
 

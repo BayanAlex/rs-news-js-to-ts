@@ -2,11 +2,14 @@ import './news.css';
 import { ApiArticle } from '../../api/api';
 
 class News {
-    public draw(data: ApiArticle[]): void {
-        const news: ApiArticle[] = data.length >= 10 ? data.filter((_item: ApiArticle, idx: number) => idx < 10) : data;
+    public draw(data: Array<ApiArticle>): void {
+        const news: Array<ApiArticle> =
+            data.length >= 10 ? data.filter((_item: ApiArticle, idx: number) => idx < 10) : data;
 
         const fragment: DocumentFragment = document.createDocumentFragment();
-        const newsItemTemp = document.querySelector('#newsItemTemp') as HTMLTemplateElement | null;
+        const newsItemTemp: HTMLTemplateElement | null = document.querySelector(
+            '#newsItemTemp'
+        ) as HTMLTemplateElement | null;
         if (!newsItemTemp) return;
         let element: HTMLElement | null;
 

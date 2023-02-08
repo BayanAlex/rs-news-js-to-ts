@@ -27,12 +27,12 @@ interface ApiData {
 }
 
 interface ApiSourcesData extends ApiData {
-    sources: ApiSource[];
+    sources: Array<ApiSource>;
 }
 
 interface ApiArticlesData extends ApiData {
     totalResults: number;
-    articles: ApiArticle[];
+    articles: Array<ApiArticle>;
 }
 
 type ApiDataType = ApiSourcesData | ApiArticlesData;
