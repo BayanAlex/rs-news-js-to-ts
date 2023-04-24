@@ -9,4 +9,8 @@
 
 *Note: the project needs to be run on localhost as the CORS API is disabled in the free version.*
 
+<details>
+<summary>Screenshots</summary>
+
 ![LINK](https://github.com/BayanAlex/portfolio/blob/main/img/news.png)
+</details>
